@@ -37,19 +37,25 @@ VALUES
 
 -- Add a new column into person table
 ALTER TABLE person
-ADD COLUMN country_of_birth VARCHAR(50) NOT NULL DEFAULT 'Unknown';
+ADD COLUMN  country_of_birth VARCHAR(50) NOT NULL DEFAULT 'Unknown';
 
 -- DROP Default 
-ALTER TABLE person
+ALTER TABLE  person
 ALTER COLUMN country_of_birth DROP DEFAULT;
 
 -- ALTER column
-ALTER TABLE person
+ALTER TABLE  person
 ALTER COLUMN gender TYPE VARCHAR(15);
 
 -- Order by 
-SELECT * FROM person
+SELECT * 
+FROM 	 person
 ORDER BY date_of_birth;
+
+-- Distinct
+SELECT DISTINCT country_of_birth
+FROM   			person
+ORDER BY 		country_of_birth;
 
 
 
