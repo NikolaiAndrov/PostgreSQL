@@ -57,5 +57,10 @@ SELECT DISTINCT country_of_birth
 FROM   			person
 ORDER BY 		country_of_birth;
 
+-- WHERE filter
+SELECT *
+FROM   person
+WHERE  email IS NOT NULL
+
 
 
