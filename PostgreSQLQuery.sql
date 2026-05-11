@@ -33,20 +33,19 @@ INSERT INTO person(first_name, last_name, gender, date_of_birth, email)
 VALUES
 	('Niki', 'And', 'Male', '1988-01-09', 'niki@gmail.com'),
 	('Viki', 'And', 'Female', '1988-01-09', 'viki@gmail.com'),
-	('Piki', 'And', 'Male', '1988-01-09');
+	('Piki', 'And', 'Male', '1988-01-09', NULL);
 
+-- Add a new column into person table
+ALTER TABLE person
+ADD COLUMN country_of_birth VARCHAR(50) NOT NULL DEFAULT 'Unknown';
 
+-- DROP Default 
+ALTER TABLE person
+ALTER COLUMN country_of_birth DROP DEFAULT;
 
-
-
-
-
-
-
-
-
-
-
+-- ALTER column
+ALTER TABLE person
+ALTER COLUMN gender TYPE VARCHAR(15);
 
 
 
