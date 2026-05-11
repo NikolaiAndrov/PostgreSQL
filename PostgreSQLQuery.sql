@@ -47,8 +47,9 @@ ALTER COLUMN country_of_birth DROP DEFAULT;
 ALTER TABLE person
 ALTER COLUMN gender TYPE VARCHAR(15);
 
-
-
+-- Order by 
+SELECT * FROM person
+ORDER BY date_of_birth;
 
 
 
