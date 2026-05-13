@@ -108,6 +108,12 @@ FROM   person
 WHERE  email
 LIKE   '%.com';
 
+-- LIKE
+SELECT *
+FROM   person
+WHERE  email
+LIKE   '____@%.com';
+
 
 
 
