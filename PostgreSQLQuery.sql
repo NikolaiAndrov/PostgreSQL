@@ -89,7 +89,11 @@ FROM   		person
 OFFSET 		5 
 FETCH FIRST 5 ROW ONLY;
 
-
+-- IN
+SELECT   *
+FROM 	 person
+WHERE 	 country_of_birth IN ('Bulgaria', 'Italy', 'Spain')
+ORDER BY country_of_birth;
 
 
 
