@@ -65,14 +65,47 @@ ORDER BY 		country_of_birth;
 -- WHERE filter
 SELECT *
 FROM   person
-WHERE  email IS NOT NULL
+WHERE  email IS NOT NULL;
 
 -- WHERE, OR, AND
 SELECT *
 FROM   person
-WHERE  email IS NOT NULL AND (country_of_birth = 'Bulgaria' OR country_of_birth = 'Unknown')
+WHERE  email IS NOT NULL AND (country_of_birth = 'Bulgaria' OR country_of_birth = 'Unknown');
 
 -- LIMIT
 SELECT *
 FROM   person
-LIMIT  10
+LIMIT  10;
+
+-- LIMIT, OFFSET
+SELECT *
+FROM   person
+OFFSET 5 
+LIMIT  5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
