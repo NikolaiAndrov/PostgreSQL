@@ -83,7 +83,11 @@ FROM   person
 OFFSET 5 
 LIMIT  5;
 
-
+-- FETCH
+SELECT 		*
+FROM   		person
+OFFSET 		5 
+FETCH FIRST 5 ROW ONLY;
 
 
 
