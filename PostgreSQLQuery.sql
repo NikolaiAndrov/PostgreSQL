@@ -126,16 +126,19 @@ FROM   	    person
 GROUP BY    country_of_birth
 ORDER BY	country_of_birth;
 
-
 SELECT      country_of_birth,   
 COUNT(*) AS "Count of countries"
 FROM   	    person
 GROUP BY    country_of_birth
 ORDER BY	"Count of countries" DESC;
 
-
-
-
+-- HAVING
+SELECT 			  country_of_birth,
+COUNT(*) AS 	  "Count of countries"
+FROM 			  person
+GROUP BY 		  country_of_birth
+HAVING COUNT(*) > 10
+ORDER BY		  "Count of countries" DESC;
 
 
 
