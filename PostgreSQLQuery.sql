@@ -102,7 +102,11 @@ WHERE 	 date_of_birth
 BETWEEN  DATE '1990-01-01' AND '2026-01-01'
 ORDER BY date_of_birth DESC;
 
-
+-- LIKE
+SELECT *
+FROM   person
+WHERE  email
+LIKE   '%.com';
 
 
 
