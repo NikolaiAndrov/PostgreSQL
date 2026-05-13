@@ -72,4 +72,7 @@ SELECT *
 FROM   person
 WHERE  email IS NOT NULL AND (country_of_birth = 'Bulgaria' OR country_of_birth = 'Unknown')
 
-
+-- LIMIT
+SELECT *
+FROM   person
+LIMIT  10
