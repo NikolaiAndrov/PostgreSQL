@@ -52,6 +52,11 @@ SELECT *
 FROM 	 person
 ORDER BY date_of_birth;
 
+-- Order by multiple columns
+SELECT * 
+FROM 	 person
+ORDER BY first_name, last_name;
+
 -- Distinct
 SELECT DISTINCT country_of_birth
 FROM   			person
