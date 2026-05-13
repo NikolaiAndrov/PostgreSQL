@@ -95,7 +95,12 @@ FROM 	 person
 WHERE 	 country_of_birth IN ('Bulgaria', 'Italy', 'Spain')
 ORDER BY country_of_birth;
 
-
+-- BETWEEN
+SELECT   *
+FROM 	 person
+WHERE 	 date_of_birth
+BETWEEN  DATE '1990-01-01' AND '2026-01-01'
+ORDER BY date_of_birth DESC;
 
 
 
