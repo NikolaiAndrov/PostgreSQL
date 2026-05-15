@@ -192,6 +192,16 @@ FROM   	      car
 GROUP BY 	  make,
 		 	  model
 
+-- Arithmetic operators
+SELECT
+						 id,
+						 make,
+						 model,
+						 price,
+ROUND(price * 0.1, 2) AS discount,
+ROUND(price * 0.9, 2) AS "final price"
+FROM 					 car
+
 
 
 
