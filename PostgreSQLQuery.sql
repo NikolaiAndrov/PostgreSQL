@@ -172,6 +172,11 @@ SELECT
 AVG(price)
 FROM car
 
+-- SUM
+SELECT 
+SUM(price)
+FROM car
+
 -- ROUND AVG
 SELECT 
 ROUND(AVG(price))
