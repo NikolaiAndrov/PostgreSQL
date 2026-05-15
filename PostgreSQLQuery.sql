@@ -219,7 +219,7 @@ SELECT EXTRACT(YEAR FROM NOW());
 SELECT  first_name,
 		last_name,
 		date_of_birth,
-EXTRACT(YEAR FROM (AGE(NOW(), date_of_birth))) 
+EXTRACT(YEAR FROM (AGE(NOW(), date_of_birth))) AS Age
 FROM 	person
 
 
