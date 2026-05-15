@@ -157,7 +157,14 @@ VALUES
 	('Nissan', 'Quasquai', 535800),
 	('Dongfeng', 'T250', 365000.65);
 
+-- MAX
+SELECT 
+MAX(price)
+FROM car
 
-
+--MIN
+SELECT 
+MIN(price)
+FROM car
 
 
