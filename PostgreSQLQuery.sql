@@ -143,11 +143,10 @@ ORDER BY		  "Count of countries" DESC;
 -- Create new table
 CREATE TABLE car (
 	id 	  BIGSERIAL NOT NULL PRIMARY KEY,
-	make  VARCHAR(100),
-	model VARCHAR(100),
+	make  VARCHAR(100) NOT NULL,
+	model VARCHAR(100) NOT NULL,
 	price NUMERIC(15, 2)
 );
-
 
 
 
