@@ -172,3 +172,27 @@ SELECT
 AVG(price)
 FROM car
 
+-- ROUND AVG
+SELECT 
+ROUND(AVG(price))
+FROM car
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
