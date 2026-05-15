@@ -140,9 +140,13 @@ GROUP BY 		  country_of_birth
 HAVING COUNT(*) > 10
 ORDER BY		  "Count of countries" DESC;
 
-
-
-
+-- Create new table
+CREATE TABLE car (
+	id 	  BIGSERIAL NOT NULL PRIMARY KEY,
+	make  VARCHAR(100),
+	model VARCHAR(100),
+	price NUMERIC(15, 2)
+);
 
 
 
