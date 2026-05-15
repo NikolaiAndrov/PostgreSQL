@@ -186,7 +186,8 @@ FROM car
 SELECT 	      make,
 	     	  model,
 MIN(price) AS "Min price",
-MAX(price) AS "Max price"
+MAX(price) AS "Max price",
+SUM(price) AS "Sum"
 FROM   	      car
 GROUP BY 	  make,
 		 	  model
