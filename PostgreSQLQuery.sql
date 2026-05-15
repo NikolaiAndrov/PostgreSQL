@@ -162,9 +162,13 @@ SELECT
 MAX(price)
 FROM car
 
---MIN
+-- MIN
 SELECT 
 MIN(price)
 FROM car
 
+-- AVG
+SELECT 
+AVG(price)
+FROM car
 
