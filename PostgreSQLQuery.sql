@@ -202,8 +202,12 @@ ROUND(price * 0.1, 2) AS discount,
 ROUND(price * 0.9, 2) AS "final price"
 FROM 					 car
 
-
-
+-- COALESCE
+SELECT 
+		 first_name,
+	     last_name,
+COALESCE(email, 'Not email provided')
+FROM     person
 
 
 
