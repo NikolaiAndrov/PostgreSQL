@@ -215,7 +215,12 @@ SELECT NOW() + INTERVAL '10 DAYS';
 SELECT (NOW() + INTERVAL '10 DAYS')::DATE;
 SELECT EXTRACT(YEAR FROM NOW());
 
-
+-- AGE
+SELECT  first_name,
+		last_name,
+		date_of_birth,
+EXTRACT(YEAR FROM (AGE(NOW(), date_of_birth))) 
+FROM 	person
 
 
 
