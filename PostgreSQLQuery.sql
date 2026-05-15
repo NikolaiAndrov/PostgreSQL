@@ -148,7 +148,14 @@ CREATE TABLE car (
 	price NUMERIC(15, 2)
 );
 
-
+-- Insert into table car
+INSERT INTO car (make, model, price)
+VALUES
+	('Mercedes', 'C250', 9900000.50),
+	('BMW', '316i', 4400000.25),
+	('Peugeot', '206CC', 328000.16),
+	('Nissan', 'Quasquai', 535800),
+	('Dongfeng', 'T250', 365000.65);
 
 
 
