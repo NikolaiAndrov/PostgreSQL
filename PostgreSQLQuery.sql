@@ -200,20 +200,19 @@ SELECT
 						 price,
 ROUND(price * 0.1, 2) AS discount,
 ROUND(price * 0.9, 2) AS "final price"
-FROM 					 car
+FROM 					 car;
 
 -- COALESCE
 SELECT 
 		 first_name,
 	     last_name,
 COALESCE(email, 'Not email provided')
-FROM     person
+FROM     person;
 
-
-
-
-
-
+-- DATES
+SELECT NOW() - INTERVAL '1 YEAR';
+SELECT NOW() + INTERVAL '10 DAYS';
+SELECT (NOW() + INTERVAL '10 DAYS')::DATE;
 
 
 
