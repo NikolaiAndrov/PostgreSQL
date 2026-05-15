@@ -177,6 +177,14 @@ SELECT
 ROUND(AVG(price))
 FROM car
 
+-- GROUP BY MIN MAX
+SELECT 	      make,
+	     	  model,
+MIN(price) AS "Min price",
+MAX(price) AS "Max price"
+FROM   	      car
+GROUP BY 	  make,
+		 	  model
 
 
 
