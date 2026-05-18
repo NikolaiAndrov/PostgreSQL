@@ -237,4 +237,13 @@ DELETE FROM person
 ADD CONSTRAINT unique_email_address
 	    UNIQUE(email);
 
+-- Add constraint for gender
+DELETE FROM person
+	  WHERE gender <> 'Male' 
+	    AND gender <> 'Female';
+
+
+
+
+
 
