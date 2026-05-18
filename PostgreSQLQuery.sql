@@ -220,11 +220,20 @@ SELECT  first_name,
 		last_name,
 		date_of_birth,
 EXTRACT(YEAR FROM (AGE(NOW(), date_of_birth))) AS Age
-FROM 	person
+   FROM person;
 
+-- Create constraint
+   SELECT email
+     FROM person
+ GROUP BY email
+   HAVING COUNT(*) > 1;
 
+DELETE FROM person
+      WHERE email = 'jjones@gmail.com' 
+		AND country_of_birth = 'Unknown';
 
-
-
+   ALTER TABLE person
+ADD CONSTRAINT unique_email_address
+	    UNIQUE(email);
 
 
