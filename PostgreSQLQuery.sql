@@ -1,9 +1,9 @@
 -- Create table person
 CREATE TABLE person (
-	id INT,
-	first_name    VARCHAR(50),
-	last_name     VARCHAR(50),
-	gender 	   	  VARCHAR(7),
+		       id INT,
+   	   first_name VARCHAR(50),
+	    last_name VARCHAR(50),
+	       gender VARCHAR(7),
 	date_of_birth DATE
 );
 
@@ -12,12 +12,12 @@ DROP TABLE person;
 
 -- Create table person with constraints
 CREATE TABLE person (
-	id 			  BIGSERIAL NOT NULL PRIMARY KEY,
-	first_name    VARCHAR(50) NOT NULL,
-	last_name 	  VARCHAR(50) NOT NULL,
-	gender 		  VARCHAR(7) NOT NULL,
+			   id BIGSERIAL NOT NULL PRIMARY KEY,
+	   first_name VARCHAR(50) NOT NULL,
+		last_name VARCHAR(50) NOT NULL,
+		   gender VARCHAR(7) NOT NULL,
 	date_of_birth DATE NOT NULL,
-	email 		  VARCHAR(150)
+			email VARCHAR(150)
 );
 
 -- Insert into table person
@@ -37,62 +37,64 @@ VALUES
 
 -- Add a new column into person table
 ALTER TABLE person
-ADD COLUMN  country_of_birth VARCHAR(50) NOT NULL DEFAULT 'Unknown';
+ ADD COLUMN country_of_birth VARCHAR(50) NOT NULL DEFAULT 'Unknown';
 
 -- DROP Default 
-ALTER TABLE  person
+ ALTER TABLE person
 ALTER COLUMN country_of_birth DROP DEFAULT;
 
 -- ALTER column
-ALTER TABLE  person
+ ALTER TABLE person
 ALTER COLUMN gender TYPE VARCHAR(15);
 
 -- Order by 
-SELECT * 
-FROM 	 person
+  SELECT * 
+    FROM person
 ORDER BY date_of_birth;
 
 -- Order by multiple columns
-SELECT * 
-FROM 	 person
+  SELECT * 
+	FROM person
 ORDER BY first_name, last_name;
 
 -- Distinct
 SELECT DISTINCT country_of_birth
-FROM   			person
-ORDER BY 		country_of_birth;
+	       FROM person
+	   ORDER BY country_of_birth;
 
 -- WHERE filter
 SELECT *
-FROM   person
-WHERE  email IS NOT NULL;
+  FROM person
+ WHERE email IS NOT NULL;
 
 -- WHERE, OR, AND
 SELECT *
-FROM   person
-WHERE  email IS NOT NULL AND (country_of_birth = 'Bulgaria' OR country_of_birth = 'Unknown');
+  FROM person
+ WHERE email IS NOT NULL 
+   AND (country_of_birth = 'Bulgaria' OR country_of_birth = 'Unknown');
 
 -- LIMIT
 SELECT *
-FROM   person
-LIMIT  10;
+  FROM person
+ LIMIT 10;
 
 -- LIMIT, OFFSET
 SELECT *
-FROM   person
+  FROM person
 OFFSET 5 
-LIMIT  5;
+ LIMIT 5;
 
 -- FETCH
-SELECT 		*
-FROM   		person
-OFFSET 		5 
+     SELECT *
+       FROM person
+     OFFSET 5 
 FETCH FIRST 5 ROW ONLY;
 
 -- IN
-SELECT   *
-FROM 	 person
-WHERE 	 country_of_birth IN ('Bulgaria', 'Italy', 'Spain')
+  SELECT *
+    FROM person
+   WHERE country_of_birth 
+      IN ('Bulgaria', 'Italy', 'Spain')
 ORDER BY country_of_birth;
 
 -- BETWEEN
@@ -143,7 +145,7 @@ ORDER BY "Count of countries" DESC;
 
 -- Create new table
 CREATE TABLE car (
-	   id BIGSERIAL NOT NULL PRIMARY KEY,
+	   id BIGSERIAL    NOT NULL PRIMARY KEY,
 	 make VARCHAR(100) NOT NULL,
 	model VARCHAR(100) NOT NULL,
 	price NUMERIC(15, 2)
@@ -184,31 +186,29 @@ ROUND(AVG(price))
 FROM car
 
 -- GROUP BY MIN MAX
-SELECT 	      make,
+       SELECT make,
 	     	  model,
 MIN(price) AS "Min price",
 MAX(price) AS "Max price",
 SUM(price) AS "Sum"
-FROM   	      car
-GROUP BY 	  make,
+		 FROM car
+	 GROUP BY make,
 		 	  model
 
 -- Arithmetic operators
-SELECT
-						 id,
+				  SELECT id,
 						 make,
 						 model,
 						 price,
 ROUND(price * 0.1, 2) AS discount,
 ROUND(price * 0.9, 2) AS "final price"
-FROM 					 car;
+					FROM car;
 
 -- COALESCE
-SELECT 
-		 first_name,
+  SELECT first_name,
 	     last_name,
 COALESCE(email, 'Not email provided')
-FROM     person;
+    FROM person;
 
 -- DATES
 SELECT NOW() - INTERVAL '1 YEAR';
@@ -217,7 +217,7 @@ SELECT (NOW() + INTERVAL '10 DAYS')::DATE;
 SELECT EXTRACT(YEAR FROM NOW());
 
 -- AGE
-SELECT  first_name,
+ SELECT first_name,
 		last_name,
 		date_of_birth,
 EXTRACT(YEAR FROM (AGE(NOW(), date_of_birth))) AS Age
