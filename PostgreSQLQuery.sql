@@ -261,5 +261,10 @@ UPDATE person
        country_of_birth = 'Bulgaria'
  WHERE id = 3;
  
-
+-- Error handling
+INSERT INTO person(id, first_name, last_name, gender, date_of_birth, email, country_of_birth)
+     VALUES(3, 'Jake', 'Johnes', 'Male', '1988-01-09', 'jjohnes@gmail.com', 'USA')
+ON CONFLICT(id) 
+ DO NOTHING;
+	 
 
