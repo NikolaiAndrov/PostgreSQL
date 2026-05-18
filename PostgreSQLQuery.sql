@@ -96,28 +96,29 @@ WHERE 	 country_of_birth IN ('Bulgaria', 'Italy', 'Spain')
 ORDER BY country_of_birth;
 
 -- BETWEEN
-SELECT   *
-FROM 	 person
-WHERE 	 date_of_birth
-BETWEEN  DATE '1990-01-01' AND '2026-01-01'
+  SELECT *
+	FROM person
+   WHERE date_of_birth
+ BETWEEN DATE '1990-01-01' 
+     AND '2026-01-01'
 ORDER BY date_of_birth DESC;
 
 -- LIKE
 SELECT *
-FROM   person
-WHERE  email
-LIKE   '%.com';
+  FROM person
+ WHERE email
+  LIKE '%.com';
 
 SELECT *
-FROM   person
-WHERE  email
-LIKE   '____@%.com';
+  FROM person
+ WHERE email
+  LIKE '____@%.com';
 
 -- ILIKE
 SELECT *
-FROM   person
-WHERE  country_of_birth
-ILIKE  'b%';
+  FROM person
+ WHERE country_of_birth
+ ILIKE 'b%';
 
 -- GROUP BY
 SELECT      country_of_birth,   
@@ -126,24 +127,24 @@ FROM   	    person
 GROUP BY    country_of_birth
 ORDER BY	country_of_birth;
 
-SELECT      country_of_birth,   
+  SELECT country_of_birth,   
 COUNT(*) AS "Count of countries"
-FROM   	    person
-GROUP BY    country_of_birth
-ORDER BY	"Count of countries" DESC;
+    FROM person
+GROUP BY country_of_birth
+ORDER BY "Count of countries" DESC;
 
 -- HAVING
-SELECT 			  country_of_birth,
-COUNT(*) AS 	  "Count of countries"
-FROM 			  person
-GROUP BY 		  country_of_birth
-HAVING COUNT(*) > 10
-ORDER BY		  "Count of countries" DESC;
+  SELECT country_of_birth,
+COUNT(*) AS "Count of countries"
+    FROM person
+GROUP BY country_of_birth
+  HAVING COUNT(*) > 10
+ORDER BY "Count of countries" DESC;
 
 -- Create new table
 CREATE TABLE car (
-	id 	  BIGSERIAL NOT NULL PRIMARY KEY,
-	make  VARCHAR(100) NOT NULL,
+	   id BIGSERIAL NOT NULL PRIMARY KEY,
+	 make VARCHAR(100) NOT NULL,
 	model VARCHAR(100) NOT NULL,
 	price NUMERIC(15, 2)
 );
@@ -159,13 +160,13 @@ VALUES
 
 -- MAX
 SELECT 
-MAX(price)
-FROM car
+   MAX(price)
+  FROM car
 
 -- MIN
 SELECT 
-MIN(price)
-FROM car
+   MIN(price)
+  FROM car
 
 -- AVG
 SELECT 
