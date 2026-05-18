@@ -123,11 +123,11 @@ SELECT *
  ILIKE 'b%';
 
 -- GROUP BY
-SELECT      country_of_birth,   
+     SELECT country_of_birth,   
 COUNT(*) AS "Count of countries"
-FROM   	    person
-GROUP BY    country_of_birth
-ORDER BY	country_of_birth;
+	   FROM person
+   GROUP BY country_of_birth
+   ORDER BY country_of_birth;
 
   SELECT country_of_birth,   
 COUNT(*) AS "Count of countries"
