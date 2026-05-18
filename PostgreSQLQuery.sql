@@ -246,4 +246,10 @@ DELETE FROM person
 ADD CONSTRAINT gender_constraint
          CHECK(gender = 'Male' OR gender = 'Female');
 
+-- UPDATE
+UPDATE person
+   SET email = 'piki@abv.bg'
+ WHERE id = 5;
+
+
 
