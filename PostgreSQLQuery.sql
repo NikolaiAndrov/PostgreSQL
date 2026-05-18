@@ -251,5 +251,15 @@ UPDATE person
    SET email = 'piki@abv.bg'
  WHERE id = 5;
 
+UPDATE person
+   SET email = 'anne@gmail.com',
+       country_of_birth = 'USA'
+ WHERE id = 1;
+
+UPDATE person
+   SET email = 'niki@gmail.com',
+       country_of_birth = 'Bulgaria'
+ WHERE id = 3;
+ 
 
 
