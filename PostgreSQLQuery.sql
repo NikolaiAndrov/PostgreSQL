@@ -261,10 +261,43 @@ UPDATE person
        country_of_birth = 'Bulgaria'
  WHERE id = 3;
  
--- Error handling
+-- Error handling: ON CONFLICT works for unique columns
 INSERT INTO person(id, first_name, last_name, gender, date_of_birth, email, country_of_birth)
-     VALUES(3, 'Jake', 'Johnes', 'Male', '1988-01-09', 'jjohnes@gmail.com', 'USA')
-ON CONFLICT(id) 
- DO NOTHING;
-	 
+       VALUES(3, 'Jake', 'Johnes', 'Male', '1988-01-09', 'jjohnes@gmail.com', 'USA')
+    ON CONFLICT(id) 
+    DO NOTHING;
+  	 
+INSERT INTO person(id, first_name, last_name, gender, date_of_birth, email, country_of_birth)
+       VALUES(3, 'Jake', 'Johnes', 'Male', '1988-01-09', 'jjohnnes@gmail.com', 'USA')
+    ON CONFLICT(id) 
+    DO UPDATE
+   SET email = EXCLUDED.email;
 
+-- Relations
+DROP TABLE person;
+DROP TABLE car;
+
+CREATE TABLE car (
+	   id BIGSERIAL    NOT NULL PRIMARY KEY,
+	 make VARCHAR(100) NOT NULL,
+	model VARCHAR(100) NOT NULL,
+	price NUMERIC(15, 2)
+);
+
+CREATE TABLE person (
+			   id BIGSERIAL   NOT NULL PRIMARY KEY,
+	   first_name VARCHAR(50) NOT NULL,
+		last_name VARCHAR(50) NOT NULL,
+		   gender VARCHAR(7)  NOT NULL,
+	date_of_birth DATE        NOT NULL,
+			email VARCHAR(150),
+ country_of_birth VARCHAR(50) NOT NULL,
+ 		   car_id BIGINT REFERENCES car(id),
+		          UNIQUE(car_id)
+);
+
+INSERT INTO person(first_name, last_name, gender, date_of_birth, email, country_of_birth, car_id)
+VALUES
+	('Niki', 'And', 'Male', '1988-01-09', 'niki@gmail.com', 'BG', 1),
+	('Viki', 'And', 'Female', '1988-01-09', 'viki@gmail.com', 'BG', 2),
+	('Piki', 'And', 'Male', '1988-01-09', 'piki@abv.bg', 'BG', 3);
