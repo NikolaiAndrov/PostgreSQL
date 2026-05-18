@@ -242,8 +242,8 @@ DELETE FROM person
 	  WHERE gender <> 'Male' 
 	    AND gender <> 'Female';
 
-
-
-
+   ALTER TABLE person
+ADD CONSTRAINT gender_constraint
+         CHECK(gender = 'Male' OR gender = 'Female');
 
 
